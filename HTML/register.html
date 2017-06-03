@@ -1,14 +1,14 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
+ <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="Book Your Travel - Online Booking HTML Template">
 	<meta name="description" content="Book Your Travel - Online Booking HTML Template">
 	<meta name="author" content="themeenergy.com">
 	
-	<title>Book Your Travel - Home</title>
-	
+	<title>Book Your Travel - Login</title>
+
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/theme-turqoise.css" id="template-color" />
 	<link rel="stylesheet" href="css/lightslider.min.css" />
@@ -27,7 +27,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="body1"> 
+<body>
 	<!--- loading animation -->
 	<div class="loading">
 		<div class="ball"></div>
@@ -168,7 +168,7 @@
 	</div>
 	<!--//slider-->
 	
-	<!--search-->
+<!--search-->
 	<div class="main-search">
 		<div class="wrap">
 			<form id="main-search" method="post" action="search-tour.html">
@@ -894,7 +894,7 @@
 					 <header class="s-title">
 						<h2>Vì Sao Chọn AngryCat Travel</h2>
 					</header>
-					<!-- <div class=""> -->
+					<div class="">
 						<div class="row">
 								<div class="col-md-12 effect_fadeInUp hid visible animated fadeInUp listwhy">
 									<ul class="">
@@ -950,7 +950,7 @@
 									</ul>
 								</div>
 						</div>
-					<!-- </div> -->
+					</div>
 
 				
 			
@@ -963,7 +963,7 @@
 	</main>
 	<!--//main-->
 	
-	<!--footer-->
+		<!--footer-->
 	<footer class="footer">
 		<div class="wrap">
 			<div class="row">
@@ -1014,39 +1014,66 @@
 		</div>
 	</footer>
 	<!---footer-->
+	
+	<div class="lightbox" style="display:block;">
+		<div class="lb-wrap">
+			<a href="#" class="close">x</a>
+			<div class="lb-content">
+				<form class="row">
+					<h3>Đăng Kí</h3>
+					<div class="f-item full-width">
+						<label for="f_name">Họ và Tên</label>
+						<input type="text" id="ns_name" name="ns_name" />
+					</div>
+					<div class="f-item full-width">
+						<label for="email">E-mail </label>
+						<input type="email" id="email" name="email" />
+					</div>
+					<div class="f-item full-width">
+						<label for="password">Mật Khẩu</label>
+						<input type="password" id="password" name="password" />
+					</div>
+					<div class="f-item checkbox full-width">
+						<input type="checkbox" id="newsletter_s" name="newsletter" />
+						<label for="newsletter_s">Gửi tôi thông tin những chuyến đi mới và tour giảm giá</label>
+					</div>
+					<div class="f-item checkbox full-width">
+						<input type="submit" id="register" name="register" value="Đăng Kí" class="gradient-button" />
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/jquery.uniform.min.js"></script>
 	<script type="text/javascript" src="js/jquery.slimmenu.min.js"></script>
 	<script type="text/javascript" src="js/lightslider.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
-	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-	<!-- <script type="text/javascript" src="bootstrap/js/jquery.min.js"></script> -->
 	<script type="text/javascript">	
-		(function( $ ) {
-			$(document).ready(function(){
-				$('.form').hide();
-				$('#form1').show();
-				$('.f-item:nth-child(1)').addClass('active');
-				$('.f-item:nth-child(1) span').addClass('checked');		
-
-				$('#hero-gallery').lightSlider({
-					gallery:true,
-					item:1,
-					pager:false,
-					gallery:false,
-					slideMargin: 0,
-					speed:2000,
-					pause:6000,
-					mode: 'fade',
-					auto:true,
-					loop:true,
-					onSliderLoad: function() {
-						$('#hero-gallery').removeClass('cS-hidden');
-					}  
-				});			
-			});
-		})(jQuery);
+		$(document).ready(function(){
+			$('.form').hide();
+			$('.form:first').show();
+			$('.f-item:first').addClass('active');
+			$('.f-item:first span').addClass('checked');
+			
+			$('#hero-gallery').lightSlider({
+                gallery:true,
+                item:1,
+                pager:false,
+				gallery:false,
+                slideMargin: 0,
+                speed:2000,
+				pause:6000,
+				mode: 'fade',
+                auto:true,
+                loop:true,
+                onSliderLoad: function() {
+                    $('#hero-gallery').removeClass('cS-hidden');
+                }  
+            });	
+		});
 	</script>
 </body>
 </html>
