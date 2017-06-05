@@ -171,7 +171,7 @@
 	<!--search-->
 	<div class="main-search">
 		<div class="wrap">
-			<form id="main-search" method="post" action="search-tour.html">
+			<form id="main-search" method="post" action="">
 				<div class="row">
 					<!--column-->
 					<div class="column radios one-fourth">
@@ -190,7 +190,7 @@
 								<label for="cruise">Chuyến Đi</label>
 							</div>
 							<div class="f-item one-half">
-								<input type="radio" name="radio" id="rent_a_car" value="form6" />
+								<input type="radio" name="radio" id="rentcar" value="form6" />
 								<label for="rent_a_car">Thuê Xe</label>
 							</div>
 						</div>
@@ -342,9 +342,33 @@
 								<h5><span>02</span> Chọn Điểm Đến ?</h5>
 								<div class="row">
 									<div class="f-item full-width">
+										<label>Chọn Điểm Đón</label>
+										<select>
+											<option value="1">Hà Nội</option>
+											<option value="2">Hồ Chí Minh</option>
+										</select>
+									</div>
+									<div class="f-item full-width">
 										<label>Chọn Điểm Đến</label>
 										<select>
-											<option>Lấy Các điểm điểm Việt nam</option>
+											<option>Địa Điểm Việt Nam</option>
+											<option value="1">Hà Nội</option>
+											<option value="2">Đà Nẵng</option>
+											<option value="3">Huế</option>
+											<option value="4">Hồ Chí Minh</option>
+											<option value="5">Nha Trang</option>
+											<option value="6">Ninh Bình</option>
+											<option value="7">Thanh Hoá</option>
+											<option value="8">Quảng Trị</option>
+											<option value="9">Đà Lạt</option>
+											<option value="10">Phú Quốc</option>
+											<option value="11">Kon Tum</option>
+											<option value="12">Băc Ninh</option>
+											<option value="13">Sơn La</option>
+											<option value="14">Hà Giang</option>
+											<option value="15">Lạng Sơn</option>
+											<option value="16">Hải Phòng</option>
+											<option value="17">Phan Thiết</option>
 										</select>
 									</div>
 								</div>
@@ -1047,6 +1071,22 @@
 				});			
 			});
 		})(jQuery);
+	</script>
+	<script type="text/javascript">	
+		$(document).ready(function(){
+				$("#cruise").click(function(){
+            		 $('form').attr('action', 'search-tour.html');
+            	}); 
+            	$("#hotel").click(function(){
+            		 $('form').attr('action', 'search-tour.html');
+            	}); 
+            	$("#rentcar").click(function(){
+            		 $('form').attr('action', 'search-tour.html');
+            	}); 
+            	$("#flight").click(function(){
+            		 $('form').attr('action', 'search-tour.html');
+            	}); 
+		});
 	</script>
 </body>
 </html>
