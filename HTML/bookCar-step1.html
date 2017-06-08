@@ -254,7 +254,8 @@
 								</div>
 								<div class="full-width">
 									<div class="one-half">
-										<input type="checkbox" id="driver" name="driver">
+									
+										<input type="checkbox"  onclick="$(this).val(this.checked ? 1 : 0)"  id="driver" name="driver">
 										<label for="driver">Thuê người lái xe 300,000đ/ngày</label>
 										 
 									</div>
@@ -409,7 +410,8 @@
 
 
 	      	$(document).ready(function()
-	      	{ 	
+	      	{ 	 
+	      		
 
 	      		$("#checkCash1").click(function(){
 	      			$("#check-btn1").css('display','block');
