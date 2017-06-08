@@ -1014,12 +1014,13 @@
 		</div>
 	</footer>
 	<!---footer-->
+
 	
 	<div class="lightbox" style="display:block;">
 		<div class="lb-wrap">
 			<a href="#" class="close">x</a>
 			<div class="lb-content">
-				<form class="row">
+				<form class="row" id="formLogin" action="" method="post">
 					<h3>Đăng Nhập</h3>
 					<div class="f-item full-width">
 						<label for="email">Email</label>
@@ -1052,6 +1053,25 @@
 	<script type="text/javascript" src="js/scripts.js"></script>
 	<script type="text/javascript">	
 		$(document).ready(function(){
+			$('#formLogin').submit(function(){
+				var email = $.trim($('#email').val());
+				var password = $.trim($('#password').val());
+				var flag = true;
+				if (email.length <= 0) {
+					$('#email').attr('placeholder','Bạn phải nhập email');
+					flag = false;
+					// debugger;
+				}else{
+					$('#email').attr('placeholder','');
+				}
+				if (password.length <= 0) {
+					$('#password').attr('placeholder','Bạn phải nhập mật khẩu');
+					flag = false;
+				}else{
+					$('#password').attr('placeholder','');
+				}
+				return flag;
+			});
 			$('.form').hide();
 			$('.form:first').show();
 			$('.f-item:first').addClass('active');

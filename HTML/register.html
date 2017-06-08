@@ -1019,11 +1019,11 @@
 		<div class="lb-wrap">
 			<a href="#" class="close">x</a>
 			<div class="lb-content">
-				<form class="row">
+				<form class="row" id="formRegister">
 					<h3>Đăng Kí</h3>
 					<div class="f-item full-width">
-						<label for="f_name">Họ và Tên</label>
-						<input type="text" id="ns_name" name="ns_name" />
+						<label for="fullName">Họ và Tên</label>
+						<input type="text" id="fullName" name="fullName" />
 					</div>
 					<div class="f-item full-width">
 						<label for="email">E-mail </label>
@@ -1032,6 +1032,12 @@
 					<div class="f-item full-width">
 						<label for="password">Mật Khẩu</label>
 						<input type="password" id="password" name="password" />
+						<span class="info-error" id="password-error" ></span>
+					</div>
+					<div class="f-item full-width">
+						<label for="cfpassword">Nhập Lại Mật Khẩu</label>
+						<input type="password" id="cfpassword" name="cfpassword" />
+						<span class="info-error" id="cfpassword-error"></span>
 					</div>
 					<div class="f-item checkbox full-width">
 						<input type="checkbox" id="newsletter_s" name="newsletter" />
@@ -1053,6 +1059,47 @@
 	<script type="text/javascript" src="js/scripts.js"></script>
 	<script type="text/javascript">	
 		$(document).ready(function(){
+			$('#formRegister').submit(function(){
+				var fullname = $.trim($('#fullName').val());
+				var email = $.trim($('#email').val());
+				var password = $.trim($('#password').val());
+				var cfpassword = $.trim($('#cfpassword').val());
+				var flag = true;
+				if (fullname.length <= 0) {
+					$('#fullName').attr('placeholder','Bạn phải nhập họ tên ');
+					flag = false;
+					// debugger;
+				}else{
+					$('#fullName').attr('placeholder','');
+				}
+				if (email.length <= 0) {
+					$('#email').attr('placeholder','Bạn phải nhập email');
+					flag = false;
+					// debugger;
+				}else{
+					$('#email').attr('placeholder','');
+				}
+				if (password.length <= 0) {
+					$('#password-error').text('Bạn phải nhập mật khẩu');
+					flag = false;
+				}else{
+					$('#password-error').text('');
+				}
+				if (cfpassword.length <= 0) {
+					$('#cfpassword-error').text('Bạn phải nhập lại mật khẩu');
+					flag = false;
+				}else{
+					$('#cfpassword-error').text('');
+				}
+				if(cfpassword != password){
+					// $('#cfpassword-error').text('Mật khẩu không trùng nhau');
+					alert('Mật khẩu không trùng nhau');
+					flag = false;
+				}else{
+					$('#cfpassword').text('');
+				}
+				return flag;
+			});
 			$('.form').hide();
 			$('.form:first').show();
 			$('.f-item:first').addClass('active');
