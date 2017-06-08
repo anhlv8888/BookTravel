@@ -212,10 +212,21 @@
 										<label for="datepicker12">Thời Gian Lấy Xe</label>
 										<div class="datepicker-wrap"><input type="text" placeholder="" id="pickUp" name="pickUp" /></div>
 									</div>
-									<div class="f-item one-half">
+									<div class="one-fifth" style="margin-top: -10px;">
 										<label for="getCar">Địa Điểm Lấy Xe </label>
-										<input type="text" id="getCar" placeholder="Nhập số nhà ,đường,phường" name="getCar" />
-										<p class="info" id="email_error"></p>
+										<div class="f-item radio-cash">
+											<label for="checkAddress1">Tại BookTravel</label>
+											<input type="radio" checked id="checkAddress1" name="checkAddress">
+										</div>
+										<div class="f-item radio-cash">
+											<label for="checkAddress2">Tại Nhà Riêng</label>
+											<input type="radio" id="checkAddress2" name="checkAddress">
+										</div>
+									</div>
+									<div class="f-item one-half">
+										
+										<input  type="text" id="getCar"  placeholder="Nhập số nhà ,đường,phường" readonly name="getCar"  value="Số 8-Tôn Thất Thuyết-Mỹ Đình-Hà Nội"/>
+										<p style="display: none;" class="info" id="carInfo"></p>
 									</div>
 								</div>
 
@@ -224,16 +235,24 @@
 										<label for="datepicker12">Thời Gian Trả</label>
 										<div class="datepicker-wrap"><input type="text" placeholder="" id="dropOff" name="dropOff" /></div>
 									</div>
-
-
-
-									<div class="f-item one-half">
+									<div class="one-fifth" style="margin-top: -10px;">
 										<label for="returnCar">Địa Điểm Trả Xe</label>
-										<input type="text" id="returnCar" name="returnCar" placeholder="Nhập số nhà ,đường,phường" />
-										<p class="info" id="address_error"></p>
+										<div class="f-item radio-cash">
+											<label for="checkAddress3">Tại BookTravel</label>
+											<input type="radio" checked id="checkAddress3" name="checkAddress1">
+										</div>
+										<div class="f-item radio-cash">
+											<label for="checkAddress4">Tại Nhà Riêng</label>
+											<input type="radio" id="checkAddress4" name="checkAddress1">
+										</div>
+									</div>
+									<div class="f-item one-half">
+										
+										<input type="text" id="returnCar"  placeholder="Nhập số nhà ,đường,phường" readonly name="returnCar"  value="Số 8-Tôn Thất Thuyết-Mỹ Đình-Hà Nội"/>
+										<p style="display: none;" class="info" id="carInfo2"></p>
 									</div>
 								</div>
-								
+
 							</div>
 							<h2><span>03 </span>Xin Quý Khách Chọn Hình Thức Thanh Toán </h2>
 							<div class="row full-width">
@@ -247,7 +266,7 @@
 								</div>
 								<div class="f-item radio-cash">
 									<label>Thanh Toán Online</label>
-									<input type="radio" id="checkCash3" name="checkCash">
+									<input type="radio" checked id="checkCash3" name="checkCash">
 								</div>
 								<div class="f-item" id="check-btn1" style="display:none;">
 									<label style="font-size: 17px;"><strong>Quý khách vui lòng thanh toán bất kì đại lý nào BookTravel</strong></label>
@@ -264,7 +283,7 @@
 									<b>Tài khoản USD : </b><font color="#FF0000">0071370089095</font> </p>
 									 
 								</div>
-								<div class="f-item" id="check-btn3" style="display:none;">
+								<div class="f-item" id="check-btn3" >
 									<span id="UcReadFilePayment1_lbContent">
 									<label style="font-size: 17px;"><strong>Chọn thanh toán bằng thẻ tín dụng 123Pay</strong></label><br>
 										Tất cả giao dịch của quý khách thông qua cổng thanh toán 123Pay được xử lý bảo mật trên nền tảng bảo mật của VeriSign và tiêu chuẩn bảo mật nối tiếng PCI DSS được chứng thực bởi Trustwave, Vietravel không lưu giữ bất kì thông tin nào về thẻ của quý khách tại hệ thống của Vietravel. Do đó, quý khách có thể hoàn toàn an tâm rằng thông tin thẻ của quý khách được bảo đảm an toàn tuyệt đối.<br>
@@ -274,8 +293,8 @@
 							</div> 
 							<div class="row">
 								<div class=" full-width">
-									 
-									<input type="submit" class="gradient-button" value="Đặt Tour" id="next-step" />
+									 <!-- -->
+									<input type="submit" onclick=" return checkdate()"   class="gradient-button" value="Đặt Tour" id="next-step" />
 								</div>
 							</div>
 						</fieldset>
@@ -380,28 +399,72 @@
 	<script type="text/javascript" src="js/jquery.slimmenu.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
 	      <script language="javascript">
-            
-          
-            $(document).ready(function()
-            { 	
-            	$("#checkCash1").click(function(){
-            		$("#check-btn1").css('display','block');
-            		$("#check-btn2").css('display','none');
-            		$("#check-btn3").css('display','none');
-            	}); 
-            	$("#checkCash2").click(function(){
-            		$("#check-btn1").css('display','none');
-            		$("#check-btn2").css('display','block');
-            		$("#check-btn3").css('display','none');
-            	}); 
-            	$("#checkCash3").click(function(){
-            		$("#check-btn1").css('display','none');
-            		$("#check-btn2").css('display','none');
-            		$("#check-btn3").css('display','block');
-            	}); 
 
 
-                $('#form_register').submit(function(){
+	      	$(document).ready(function()
+	      	{ 	
+
+	      		$("#checkCash1").click(function(){
+	      			$("#check-btn1").css('display','block');
+	      			$("#check-btn2").css('display','none');
+	      			$("#check-btn3").css('display','none');
+	      		}); 
+	      		$("#checkCash2").click(function(){
+	      			$("#check-btn1").css('display','none');
+	      			$("#check-btn2").css('display','block');
+	      			$("#check-btn3").css('display','none');
+	      		}); 
+	      		$("#checkCash3").click(function(){
+	      			$("#check-btn1").css('display','none');
+	      			$("#check-btn2").css('display','none');
+	      			$("#check-btn3").css('display','block');
+	      		}); 
+	      		$("#checkAddress1").click(function( ){
+	      			// $("#getCar").slideDown();
+	      			$("#carInfo").slideUp();
+	      			$("#getCar").val('Số 8-Tôn Thất Thuyết-Mỹ Đình-Hà Nội');
+	      			$("#getCar").attr('readonly','readonly');
+
+	      		});
+	      		$("#checkAddress2").click(function( ){
+	      			// $("#getCar").slideDown();
+	      			$("#getCar").val('');
+	      			$("#getCar").removeAttr('readonly');
+	      			$("#carInfo").slideDown();
+	      			$("#carInfo").text("Phí vận chuyển 100,000đ khu vực nội thành.");
+
+	      		});
+	      		$("#checkAddress3").click(function( ){
+	      			// $("#returnCar").slideDown();
+	      			$("#carInfo2").slideUp();
+	      			$("#returnCar").val('Số 8-Tôn Thất Thuyết-Mỹ Đình-Hà Nội');
+	      			$("#returnCar").attr('readonly','readonly');
+
+	      		});
+	      		$("#checkAddress4").click(function( ){
+	      			// $("#returnCar").slideDown();
+	      			$("#returnCar").val('');
+	      			$("#returnCar").removeAttr('readonly');
+	      			$("#carInfo2").slideDown();
+	      			$("#carInfo2").text("Phí vận chuyển 100,000đ khu vực nội thành.");
+
+	      		});
+	      		// $("#pickUp").datepicker({
+	      		// 	numberOfMonths: 1,
+	      		// 	onSelect: function(selected) {
+	      		// 		$("#dropOff").datepicker("option","minDate", selected)
+	      		// 	}
+	      		// });
+	      		// $("#dropOff").datepicker({ 
+	      		// 	numberOfMonths: 1,
+	      		// 	onSelect: function(selected) {
+	      		// 		$("#pickUp").datepicker("option","maxDate", selected)
+	      		// 	}
+	      		// });  
+
+
+
+	      		$('#form_register').submit(function(){
                 		// alert ('anc');
                     // BƯỚC 1: Lấy dữ liệu từ form
                     var fullname    = $.trim($('#fullname').val());
@@ -418,18 +481,18 @@
                     // Biến cờ hiệu
                     var flag = true;
 
+
                     // Username
                     if (fullname == '' || username.length < 4){
-                        $('#fullname').attr("placeholder", "Họ Tên Lớn hơn 4 kí tự");
+                    	$('#fullname').attr("placeholder", "Họ Tên Lớn hơn 4 kí tự");
 
-                        flag = false;
+                    	flag = false;
                         // debugger;
                     }
                     else{
-                        $('#fullname_error').text('');
+                    	$('#fullname_error').text('');
                     }
-
-                  //  Phone 
+                     //  Phone 
                     if ( phone.length <= 0  ){
                         $('#phone').attr('placeholder','Bạn phải nhập Số điện thoại ');
                         flag = false;
@@ -437,7 +500,6 @@
                     else{
                         $('#password_error').text('');
                     }
-
                     // Email
                     if (email.length <=0){
                         $('#email').attr('placeholder','Email không được để trống và phải đúng định dạng');
@@ -446,12 +508,10 @@
                     else{
                         $('#email_error').text('');
                     }
-
                       // address
                     if (address.length <= 0){
                         $('#address').attr('placeholder','Bạn phải nhập địa chỉ');
                         flag = false;   
-
                     }
                     else{
                         $('#address_error').text('');
@@ -461,7 +521,6 @@
                     if (pickup.length <= 0){
                         $('#pickUp').attr('placeholder','Băt buộc nhập');
                         flag = false;   
-
                     }
                     else{
                         $('#pickUp').attr('placeholder','');
@@ -470,7 +529,6 @@
                     if (dropoff.length <= 0){
                         $('#dropOff').attr('placeholder','Bắt buộc nhập');
                         flag = false;   
-
                     }
                     else{
                         $('#dropOff').attr('placeholder','');
@@ -479,7 +537,6 @@
                     if (getcar.length <= 0){
                         $('#getCar').attr('placeholder','Bạn phải nhập địa chỉ');
                         flag = false;   
-
                     }
                     else{
                         $('#address_error').attr('placeholder','');
@@ -488,15 +545,26 @@
                     if (returncar.length <= 0){
                         $('#returnCar').attr('placeholder','Bạn phải nhập địa chỉ');
                         flag = false;   
-
                     }
                     else{
                         $('#returnCar').attr('placeholder','');
                     }
+                         return flag;
+                 });
 
-                    return flag;
-                });
-            });
+
+	      	});
+				function checkdate(){
+						var pickup = document.getElementById("pickUp").value;
+						var dropoff = document.getElementById("dropOff").value;
+						var check = true;
+						if (Date.parse(pickup) > Date.parse(dropoff)) {
+							alert("Xin xác nhận lại thời gian ,thời gian trả xe phải lớn hơn thời gian đi");
+							check = false;
+						}
+						return check;
+					}	
+					 
         </script>
 
 </body>
