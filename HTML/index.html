@@ -46,9 +46,10 @@
 			<div class="ribbon">
 				<nav>
 					<ul class="profile-nav">
-						<li class="active"><a href="#" title="My Account">Tài Khoản</a></li>
-						<li><a href="login.html" title="Login">Đăng Nhập</a></li>
-						<li><a href="my_account.html" title="Settings">Cài Đặt</a></li>
+						<li  class="active"><a href="login.html" title="Login">Đăng Nhập</a></li>
+						<!-- Nếu đăng nhập xong -->
+						<!-- <li class="active"><a href="my_account.html" title="Settings">Tài Khoản</a></li>
+						<li class="active"><a href="register.html" title="register">Đăng Xuất</a></li> -->
 					</ul>
 					<ul class="lang-nav">
 						<li class="active"><a href="#" title="VietName">VietNamese</a></li>
@@ -422,112 +423,31 @@
 						<!--form rent a car-->
 						<div class="form row" id="form6">
 							<!--column-->
-							<div class="column one-third">
-								<h5><span>02</span> Chọn Điểm Đến ?</h5>
+							<div class="column one-half">
+								<h5><span>02</span> Chọn Tên xe ?</h5>
 								<div class="row">
 									<div class="f-item full-width">
-										<label for="destination7">Địa Điểm Lấy Xe</label>
-										<input type="text" placeholder="Tôi muốn lấy xe ở ..." id="destination7" name="destination" />
+										<label for="destination7">Tìm Kiếm Xe</label>
+										<input type="text" placeholder="Tìm Xe Bạn Muốn Thuê" id="destination7" name="destination" />
 									</div>
-									<div class="f-item full-width">
-										<label for="destination8">Địa Điểm Trả Xe</label>
-										<input type="text" placeholder="Tôi muốn trả xe ở ..." id="destination8" name="destination" />
-									</div>
+									 
 								</div>
 							</div>
 							<!--//column-->
 							
 							<!--column-->
-							<div class="column one-third">
-								<h5><span>03</span> Thời Gian ?</h5>
+							<div class="column one-half">
+								<h5><span>03</span>  Kiểu Xe ?</h5>
 								<div class="row">
-									<div class="f-item full-width datepicker">
-										<label for="datepicker11">Thời Gian Lấy Xe</label>
-										<div class="row">
-											<div class="f-item one-half">
-												<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker11" name="datepicker11" /></div>
-											</div>
-											<div class="f-item one-half">
-												<select>
-													<option>00:00</option>
-													<option>01:00</option>
-													<option>02:00</option>
-													<option>03:00</option>
-													<option>04:00</option>
-													<option>05:00</option>
-													<option>06:00</option>
-													<option>07:00</option>
-													<option>08:00</option>
-													<option>09:00</option>
-													<option selected>10:00</option>
-													<option>11:00</option>
-													<option>12:00</option>
-													<option>13:00</option>
-													<option>14:00</option>
-													<option>15:00</option>
-													<option>16:00</option>
-													<option>17:00</option>
-													<option>18:00</option>
-													<option>19:00</option>
-													<option>20:00</option>
-													<option>21:00</option>
-													<option>22:00</option>
-													<option>23:00</option>
-												</select>
-											</div>
-										</div>
-									</div>
-									<div class="f-item full-width datepicker">
-										<label for="datepicker12">Thời Gian Trả</label>
-										<div class="row">
-											<div class="f-item one-half">
-												<div class="datepicker-wrap"><input type="text" placeholder="" id="datepicker12" name="datepicker12" /></div>
-											</div>
-											<div class="f-item one-half">
-												<select>
-													<option>00:00</option>
-													<option>01:00</option>
-													<option>02:00</option>
-													<option>03:00</option>
-													<option>04:00</option>
-													<option>05:00</option>
-													<option>06:00</option>
-													<option>07:00</option>
-													<option>08:00</option>
-													<option>09:00</option>
-													<option selected>10:00</option>
-													<option>11:00</option>
-													<option>12:00</option>
-													<option>13:00</option>
-													<option>14:00</option>
-													<option>15:00</option>
-													<option>16:00</option>
-													<option>17:00</option>
-													<option>18:00</option>
-													<option>19:00</option>
-													<option>20:00</option>
-													<option>21:00</option>
-													<option>22:00</option>
-													<option>23:00</option>
-												</select>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!--//column-->
-						
-							<!--column-->
-							<div class="column one-third">
-								<h5><span>04</span>  Kiểu Xe ?</h5>
-								<div class="row">
-									<div class="f-item one-half">
-										<label for="spinner2">Loại Xe:</label>
+									<div class="f-item full-width">
+										<label for="spinner2">Hãng Xe:</label>
 										<select>
-											<option> Không có </option>
-											<option> Hạnh thường </option>
-											<option> Hạng sang </option>
-											<Option> Thể Thao </option>
+											<option> HonDa </option>
+											<option> Toyota </option>
+											<option> SamSung </option>
+											<Option> SamCo</option>
+											<Option> HuynDai</option>
+											<Option> Mecedes</option>
 										</select>
 									</div>
 								</div>
